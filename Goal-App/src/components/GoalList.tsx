@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import {type ReactNode, useEffect, useState } from "react";
 import Goal from "./Goal";
 import NewGoal from "./NewGoal";
+import MsgBox from "./MsgBox";
+
 
 interface GoalType {
   goal: string;
@@ -46,9 +48,27 @@ const GoalList = () => {
     setGoal(updatedGoals);
   }
 
+  //Message Box:
+  let hintBox: ReactNode;
+
+
+  if (goals.length === 0) {
+    
+    hintBox = <MsgBox mode="hint">You have no Goals yet. Add your Goals.</MsgBox>
+    
+  }
+
+  let warningBox: ReactNode;
+
+  if (goals.length >= 5) {
+    warningBox = <MsgBox mode="warning" severity="low"> Are you sure you can handle these goals? Please clear up.</MsgBox>
+  }
+  // if hintBox/warningBox is undefined it is not displayed.
   return (
-    <div>
+    <>
       <NewGoal onAddGoal={handleAddGoal}></NewGoal>
+      {hintBox}
+      {warningBox}
       <ul className="flex flex-wrap justify-evenly gap-4">
         {goals.map((goal) => (
           <li key={goal.id} className="flex-grow min-w-[40%] max-w-full break-words">
@@ -56,7 +76,7 @@ const GoalList = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };
 

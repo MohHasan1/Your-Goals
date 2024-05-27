@@ -60,8 +60,8 @@ const GoalList = () => {
 
   let warningBox: ReactNode;
 
-  if (goals.length >= 5) {
-    warningBox = <MsgBox mode="warning" severity="low"> Are you sure you can handle these goals? Please clear up.</MsgBox>
+  if (goals.length >= 4) {
+    warningBox = <MsgBox mode="warning" severity="medium"> Are you sure you can handle all these goals? Please clear up.</MsgBox>
   }
   // if hintBox/warningBox is undefined it is not displayed.
   return (

@@ -8,7 +8,7 @@ function App() {
  
 
   return (
-    <main className="bg-slate-900 p-5 mt-20 w-[40%] text-white font-bold mx-auto rounded-lg ">
+    <main className="bg-slate-900 p-5 my-10 w-[95%] xl:w-[50%] text-white font-bold mx-auto rounded-lg ">
       <Header image={{ src: "/todoLogo.png", alt: "Todo Logo" }}>
         Your Goals
       </Header>
@@ -22,5 +22,4 @@ function App() {
 export default App;
 
 //flex-wrap makes sure all teh children are  wrapped (inside) within the flex parent.
-
 // very important: when using flex-1, if we want a certain number of div, we might have to specify max and min width and/or height.

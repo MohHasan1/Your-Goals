@@ -1,5 +1,7 @@
 # Simple Goal Tracker App
 
+[Visit Goal App](https://goal-app-70cf4.firebaseapp.com/)
+
 A simple web application built with React, Tailwind CSS, and TypeScript that allows users to add and delete goals using local storage.
 
 ## Description
